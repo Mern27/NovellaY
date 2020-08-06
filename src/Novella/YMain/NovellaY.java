@@ -7,7 +7,7 @@ package Novella.YMain;
 
 //import Novella.JFrames.MainView;
 
-import java.awt.HeadlessException;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -22,7 +22,7 @@ public class NovellaY {
     public static void main(String[] args) throws InterruptedException  {
         // TODO code application logic here
          
-         
+         MainView b = new MainView();
          
          SplashScreen a = new SplashScreen();
          a.setVisible(true);
@@ -35,18 +35,19 @@ public class NovellaY {
                    
                    
                   a.jLabel2.setText(Integer.toString(i)+"%"); 
-                   if(i==100) {
-                       
-                       MainView b = new MainView();
-                                 a.setVisible(false);
-                                 b.setVisible(true);
-                              }
+                   if(i==100) 
+                   {
+                     a.setVisible(false);
+                     b.setVisible(true);
+                    }
           
-               } 
-               } catch (HeadlessException e)              
-               {
-                   JOptionPane.showMessageDialog(null, "Failed");
                }
+           
+               } catch (Exception e)              
+               {
+                   JOptionPane.showMessageDialog(null, e);
+               }
+        
     }
     
 }

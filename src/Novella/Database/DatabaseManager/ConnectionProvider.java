@@ -8,6 +8,7 @@ package Novella.Database.DatabaseManager;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author Yamaan Ahmed Naseem for Raa Atoll Education Centre for the wonderful 
@@ -15,25 +16,29 @@ import javax.swing.JOptionPane;
  */
 public class ConnectionProvider {
     
-    public static void main (String[]args){
+    public static Connection getCon(){
     
     
    
        try {
-           Class.forName("org.h2.Driver");
-           Connection con = DriverManager.getConnection("jdbc:h2:~/NovellaDatabase" , "NovellaDatabase" , "");
-           Statement st = con.createStatement();
+           
+           Class.forName("com.mysql.jdbc.Driver");
+           
+           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/novelladatabase", "root" , "");
+           
            System.out.println("Connected");
-           // return con;
+           return con;
     
            
-       } catch (ClassNotFoundException ex) {
-           JOptionPane.showMessageDialog(null, "Class Not Found");
-       } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Unable to Connect");
+       } catch (Exception e) {
+           
+           System.out.println("Unable to Connect");
+           //return null;
        }
+        return null;
     
     
-        }
+      
     
+}
 }

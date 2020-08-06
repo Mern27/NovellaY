@@ -7,6 +7,12 @@ package Novella.YMain;
 
 //import Novella.JFrames.*;
 
+import Novella.Database.DatabaseManager.ConnectionProvider;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
+
+
 /**
  *
  * @author Koka
@@ -37,35 +43,38 @@ public class MainView extends javax.swing.JFrame {
         IssueBookjPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         RecievejPanel = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        AddNewBookJPanel = new javax.swing.JPanel();
-        AddNewStudentJPanel = new javax.swing.JPanel();
+        BookDirectory = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        StudentTables = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        EmptyPane1 = new javax.swing.JPanel();
+        StudentDashboard = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField13 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        AddNewStudent = new javax.swing.JLabel();
+        StudentDashboardLabel = new javax.swing.JLabel();
         IssueBook1 = new javax.swing.JLabel();
         AddNewBook = new javax.swing.JLabel();
+        NumberOfBooksjLabel = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        StudentTablesLabel = new javax.swing.JLabel();
+        NumberOfStudentjLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Hidebar1.setBackground(new java.awt.Color(255, 255, 255));
@@ -78,10 +87,10 @@ public class MainView extends javax.swing.JFrame {
         );
         Hidebar1Layout.setVerticalGroup(
             Hidebar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Hidebar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 20, 420));
+        getContentPane().add(Hidebar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 20, 450));
 
         Hidebar3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -89,14 +98,14 @@ public class MainView extends javax.swing.JFrame {
         Hidebar3.setLayout(Hidebar3Layout);
         Hidebar3Layout.setHorizontalGroup(
             Hidebar3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 870, Short.MAX_VALUE)
         );
         Hidebar3Layout.setVerticalGroup(
             Hidebar3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Hidebar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 740, 30));
+        getContentPane().add(Hidebar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 870, 30));
 
         Hidebar4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -104,14 +113,14 @@ public class MainView extends javax.swing.JFrame {
         Hidebar4.setLayout(Hidebar4Layout);
         Hidebar4Layout.setHorizontalGroup(
             Hidebar4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 860, Short.MAX_VALUE)
         );
         Hidebar4Layout.setVerticalGroup(
             Hidebar4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Hidebar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, -1, 20));
+        getContentPane().add(Hidebar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 860, 20));
 
         Hidebar2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -123,10 +132,10 @@ public class MainView extends javax.swing.JFrame {
         );
         Hidebar2Layout.setVerticalGroup(
             Hidebar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Hidebar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 60, 20, 420));
+        getContentPane().add(Hidebar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 80, 20, 450));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -136,7 +145,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Issue Book");
-        IssueBookjPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+        IssueBookjPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         jTabbedPane1.addTab("tab1", IssueBookjPanel);
 
@@ -144,160 +153,145 @@ public class MainView extends javax.swing.JFrame {
         RecievejPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jTabbedPane1.addTab("tab2", RecievejPanel);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("tab3", jPanel4);
-
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 738, Short.MAX_VALUE)
+            .addGap(0, 848, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGap(0, 444, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("tab4", jPanel5);
 
-        AddNewBookJPanel.setBackground(new java.awt.Color(255, 255, 255));
+        BookDirectory.setBackground(new java.awt.Color(255, 255, 255));
+        BookDirectory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout AddNewBookJPanelLayout = new javax.swing.GroupLayout(AddNewBookJPanel);
-        AddNewBookJPanel.setLayout(AddNewBookJPanelLayout);
-        AddNewBookJPanelLayout.setHorizontalGroup(
-            AddNewBookJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 738, Short.MAX_VALUE)
-        );
-        AddNewBookJPanelLayout.setVerticalGroup(
-            AddNewBookJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab5", AddNewBookJPanel);
-
-        AddNewStudentJPanel.setBackground(new java.awt.Color(255, 255, 255));
-        AddNewStudentJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Add New Student");
-        AddNewStudentJPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Student Novella ID:");
-        AddNewStudentJPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Student Name:");
-        AddNewStudentJPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Student Class:");
-        AddNewStudentJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Student Index:");
-        AddNewStudentJPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Student Address:");
-        AddNewStudentJPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Student Phone:");
-        AddNewStudentJPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        AddNewStudentJPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 180, -1));
-
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField8.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+        jTable2.setBackground(new java.awt.Color(255, 255, 255));
+        jTable2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jTable2.setForeground(new java.awt.Color(255, 255, 255));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable2.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jTable2ComponentShown(evt);
             }
         });
-        AddNewStudentJPanel.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 180, -1));
+        jScrollPane2.setViewportView(jTable2);
 
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
-        AddNewStudentJPanel.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 180, -1));
+        BookDirectory.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 830, 360));
 
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
-        AddNewStudentJPanel.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 180, -1));
+        jButton2.setText("Add New Book");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        BookDirectory.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField11.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(0, 0, 0));
-        AddNewStudentJPanel.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 180, -1));
+        jTabbedPane1.addTab("tab5", BookDirectory);
 
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Student Island:");
-        AddNewStudentJPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+        StudentTables.setBackground(new java.awt.Color(255, 255, 255));
+        StudentTables.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField12.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(0, 0, 0));
-        AddNewStudentJPanel.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 180, -1));
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
+        jTable1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        StudentTables.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 360));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Save");
-        jButton1.setToolTipText("");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 204), 1, true));
-        AddNewStudentJPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 60, 20));
-
-        jButton2.setText("jButton2");
-        AddNewStudentJPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
-
-        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+        jButton1.setText("Add New Student");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
             }
         });
-        AddNewStudentJPanel.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 180, -1));
+        StudentTables.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
-        jTabbedPane1.addTab("tab6", AddNewStudentJPanel);
+        jTabbedPane1.addTab("tab6", StudentTables);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 740, 420));
+        EmptyPane1.setBackground(new java.awt.Color(255, 255, 255));
+        EmptyPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout EmptyPane1Layout = new javax.swing.GroupLayout(EmptyPane1);
+        EmptyPane1.setLayout(EmptyPane1Layout);
+        EmptyPane1Layout.setHorizontalGroup(
+            EmptyPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 848, Short.MAX_VALUE)
+        );
+        EmptyPane1Layout.setVerticalGroup(
+            EmptyPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 444, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab7", EmptyPane1);
+
+        StudentDashboard.setBackground(new java.awt.Color(255, 255, 255));
+        StudentDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/Pie Chart.png"))); // NOI18N
+        StudentDashboard.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel6.setText("of Boys to Girls in R.A.E.C");
+        StudentDashboard.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel7.setText("Pie Chart Representation");
+        StudentDashboard.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
+
+        jTabbedPane1.addTab("tab3", StudentDashboard);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 850, 470));
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 170, 10));
 
-        AddNewStudent.setBackground(new java.awt.Color(255, 255, 255));
-        AddNewStudent.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        AddNewStudent.setForeground(new java.awt.Color(255, 255, 255));
-        AddNewStudent.setText("Sudent Directory");
-        AddNewStudent.addMouseListener(new java.awt.event.MouseAdapter() {
+        StudentDashboardLabel.setBackground(new java.awt.Color(255, 255, 255));
+        StudentDashboardLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        StudentDashboardLabel.setForeground(new java.awt.Color(255, 255, 255));
+        StudentDashboardLabel.setText("Student Dashboard");
+        StudentDashboardLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AddNewStudentMouseClicked(evt);
+                StudentDashboardLabelMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                AddNewStudentMouseEntered(evt);
+                StudentDashboardLabelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                AddNewStudentMouseExited(evt);
+                StudentDashboardLabelMouseExited(evt);
             }
         });
-        getContentPane().add(AddNewStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
+        getContentPane().add(StudentDashboardLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         IssueBook1.setBackground(new java.awt.Color(255, 255, 255));
         IssueBook1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -319,7 +313,7 @@ public class MainView extends javax.swing.JFrame {
         AddNewBook.setBackground(new java.awt.Color(255, 255, 255));
         AddNewBook.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         AddNewBook.setForeground(new java.awt.Color(255, 255, 255));
-        AddNewBook.setText("Add New Book");
+        AddNewBook.setText("Book Directory");
         AddNewBook.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddNewBookMouseClicked(evt);
@@ -333,7 +327,48 @@ public class MainView extends javax.swing.JFrame {
         });
         getContentPane().add(AddNewBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/AA.png"))); // NOI18N
+        NumberOfBooksjLabel.setFont(new java.awt.Font("Century Gothic", 0, 32)); // NOI18N
+        NumberOfBooksjLabel.setForeground(new java.awt.Color(255, 255, 255));
+        NumberOfBooksjLabel.setText("1542");
+        getContentPane().add(NumberOfBooksjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, -1, 30));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Number of Books Availiable");
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 570, -1, -1));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Number of Students");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 570, -1, 20));
+
+        StudentTablesLabel.setBackground(new java.awt.Color(255, 255, 255));
+        StudentTablesLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        StudentTablesLabel.setForeground(new java.awt.Color(255, 255, 255));
+        StudentTablesLabel.setText("Student Directory");
+        StudentTablesLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StudentTablesLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                StudentTablesLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                StudentTablesLabelMouseExited(evt);
+            }
+        });
+        getContentPane().add(StudentTablesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
+
+        NumberOfStudentjLabel.setFont(new java.awt.Font("Century Gothic", 0, 32)); // NOI18N
+        NumberOfStudentjLabel.setForeground(new java.awt.Color(255, 255, 255));
+        NumberOfStudentjLabel.setText("473");
+        getContentPane().add(NumberOfStudentjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, -1, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/HOME 22.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -342,28 +377,28 @@ public class MainView extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
+            .addGap(0, 1140, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 550));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 600));
 
-        setSize(new java.awt.Dimension(996, 590));
+        setSize(new java.awt.Dimension(1149, 638));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AddNewStudentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddNewStudentMouseEntered
+    private void StudentDashboardLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDashboardLabelMouseEntered
         // TODO add your handling code here:
-        AddNewStudent.setForeground(new java.awt.Color (183,227,234));
-    }//GEN-LAST:event_AddNewStudentMouseEntered
+        StudentDashboardLabel.setForeground(new java.awt.Color (183,227,234));
+    }//GEN-LAST:event_StudentDashboardLabelMouseEntered
 
-    private void AddNewStudentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddNewStudentMouseExited
+    private void StudentDashboardLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDashboardLabelMouseExited
         // TODO add your handling code here:
-        AddNewStudent.setForeground(new java.awt.Color (255,255,255));
-    }//GEN-LAST:event_AddNewStudentMouseExited
+        StudentDashboardLabel.setForeground(new java.awt.Color (255,255,255));
+    }//GEN-LAST:event_StudentDashboardLabelMouseExited
 
     private void IssueBook1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IssueBook1MouseEntered
         // TODO add your handling code here:
@@ -387,26 +422,103 @@ public class MainView extends javax.swing.JFrame {
 
     private void AddNewBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddNewBookMouseClicked
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedComponent(AddNewBookJPanel);
+        jTabbedPane1.setSelectedComponent(BookDirectory);
+        
     }//GEN-LAST:event_AddNewBookMouseClicked
 
-    private void AddNewStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddNewStudentMouseClicked
+    private void StudentDashboardLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDashboardLabelMouseClicked
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedComponent(AddNewStudentJPanel);
-    }//GEN-LAST:event_AddNewStudentMouseClicked
+        jTabbedPane1.setSelectedComponent(StudentDashboard);
+    }//GEN-LAST:event_StudentDashboardLabelMouseClicked
 
     private void IssueBook1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IssueBook1MouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedComponent(IssueBookjPanel);
     }//GEN-LAST:event_IssueBook1MouseClicked
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+        AddNewStudentJframe a = new AddNewStudentJframe();
+        setVisible(false);
+        a.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jButton1MouseClicked
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+        this.setVisible(true);
+        AddNewBookJframe m = new AddNewBookJframe();
+        m.setVisible(true);
+       
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jTable2ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable2ComponentShown
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTable2ComponentShown
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        try
+        {
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select student.studentIndex,student.studentName,student.studentClass,student.studentAddress,student.studentIsland,student.studentPhone from student");
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+            ResultSet rsl = st.executeQuery("select books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookAvlAmount,books.BookNumber from books");
+            jTable2.setModel(DbUtils.resultSetToTableModel(rsl));
+            
+            String query = "select count(*) from books";
+            ResultSet rs2 = st.executeQuery(query);
+            //Refreshing Number of Books Label
+            if (rs2.next())
+            {
+                String p = rs2.getString(1);
+                
+                String quer = "select count(*) from student";
+                ResultSet rs3 = st.executeQuery(quer);
+                NumberOfBooksjLabel.setText(p);
+                
+                if (rs3.next())
+                {
+                    String q = rs3.getString(1);
+                    NumberOfStudentjLabel.setText(q);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Students");
+                }
+                 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Books");
+                
+                new MainView().setVisible(true);
+            } 
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_formComponentShown
+
+    private void StudentTablesLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentTablesLabelMouseClicked
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedComponent(StudentTables);
+    }//GEN-LAST:event_StudentTablesLabelMouseClicked
+
+    private void StudentTablesLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentTablesLabelMouseEntered
+        // TODO add your handling code here:
+        StudentTablesLabel.setForeground(new java.awt.Color (183,227,234));
+    }//GEN-LAST:event_StudentTablesLabelMouseEntered
+
+    private void StudentTablesLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentTablesLabelMouseExited
+        // TODO add your handling code here:
+        StudentTablesLabel.setForeground(new java.awt.Color (255,255,255));
+    }//GEN-LAST:event_StudentTablesLabelMouseExited
 
     /**
      * @param args the command line arguments
@@ -446,39 +558,37 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddNewBook;
-    private javax.swing.JPanel AddNewBookJPanel;
-    private javax.swing.JLabel AddNewStudent;
-    private javax.swing.JPanel AddNewStudentJPanel;
+    private javax.swing.JPanel BookDirectory;
+    private javax.swing.JPanel EmptyPane1;
     private javax.swing.JPanel Hidebar1;
     private javax.swing.JPanel Hidebar2;
     private javax.swing.JPanel Hidebar3;
     private javax.swing.JPanel Hidebar4;
     private javax.swing.JLabel IssueBook1;
     private javax.swing.JPanel IssueBookjPanel;
+    public javax.swing.JLabel NumberOfBooksjLabel;
+    public javax.swing.JLabel NumberOfStudentjLabel;
     private javax.swing.JPanel RecievejPanel;
+    private javax.swing.JPanel StudentDashboard;
+    private javax.swing.JLabel StudentDashboardLabel;
+    public javax.swing.JPanel StudentTables;
+    private javax.swing.JLabel StudentTablesLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    public javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
