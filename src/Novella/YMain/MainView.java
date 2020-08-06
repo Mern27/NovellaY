@@ -274,7 +274,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 850, 470));
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 170, 10));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 190, 10));
 
         StudentDashboardLabel.setBackground(new java.awt.Color(255, 255, 255));
         StudentDashboardLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -291,7 +291,7 @@ public class MainView extends javax.swing.JFrame {
                 StudentDashboardLabelMouseExited(evt);
             }
         });
-        getContentPane().add(StudentDashboardLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+        getContentPane().add(StudentDashboardLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
         IssueBook1.setBackground(new java.awt.Color(255, 255, 255));
         IssueBook1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -308,7 +308,7 @@ public class MainView extends javax.swing.JFrame {
                 IssueBook1MouseExited(evt);
             }
         });
-        getContentPane().add(IssueBook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+        getContentPane().add(IssueBook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
         AddNewBook.setBackground(new java.awt.Color(255, 255, 255));
         AddNewBook.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -325,7 +325,7 @@ public class MainView extends javax.swing.JFrame {
                 AddNewBookMouseExited(evt);
             }
         });
-        getContentPane().add(AddNewBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        getContentPane().add(AddNewBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
         NumberOfBooksjLabel.setFont(new java.awt.Font("Century Gothic", 0, 32)); // NOI18N
         NumberOfBooksjLabel.setForeground(new java.awt.Color(255, 255, 255));
