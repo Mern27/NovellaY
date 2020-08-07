@@ -9,6 +9,7 @@ package Novella.YMain;
 import java.sql.*;
 import Novella.Database.DatabaseManager.ConnectionProvider;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -207,14 +208,15 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
         Connection con = ConnectionProvider.getCon();
         Statement st = con.createStatement();
         st.executeUpdate("insert into student values('"+studentIndex+"','"+studentName+"','"+studentAddress+"','"+studentIsland+"','"+studentClass+"','"+studentPhone+"')");
-            JOptionPane.showMessageDialog(null , "Successfull");
+            JOptionPane.showMessageDialog(null , "Successfully Updated");
+            
             this.dispose();
             b.setVisible(true);
-        
+            
         }
         catch(Exception e)
                 {
-                System.out.println("Cannot");
+                System.out.println(e);
                 }
         
     }//GEN-LAST:event_jButton1MouseClicked

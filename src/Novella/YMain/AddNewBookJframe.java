@@ -6,8 +6,6 @@
 package Novella.YMain;
 
 import Novella.Database.DatabaseManager.ConnectionProvider;
-import Novella.Refresh.Refresh;
-import java.awt.HeadlessException;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -337,9 +335,9 @@ public class AddNewBookJframe extends javax.swing.JFrame {
             
 
         }
-        catch (SQLException | HeadlessException e)
+        catch (Exception e)
         {
-            JOptionPane.showMessageDialog(null,"An Error Occured.");
+            JOptionPane.showMessageDialog(null,e);
             this.dispose();
             new MainView().setVisible(true);
         }
@@ -358,10 +356,7 @@ public class AddNewBookJframe extends javax.swing.JFrame {
         String DDC = jDDC.getText();
         String Publisher = jPublisher.getText();
         String Subject = jSubject.getText();
-        //String Date = jDate.getDateFormatString();
         String Author = jAuthor.getText();
-        //String Edition = jEdition.getText();
-        //String Vol = jVol.getText();
         String Year = jYear.getText();
         String Pages = jPages.getText();
         String BookAvlAmount = jLocation.getText();
@@ -375,16 +370,16 @@ public class AddNewBookJframe extends javax.swing.JFrame {
             Statement st1 = con.createStatement();
             st1.executeUpdate("insert into books values('"+ISBN+"','"+Title+"','"+DDC+"','"+Publisher+"','"+Subject+"','"+Author+"','"+Year+"','"+Pages+"','"+BookAvlAmount+"','"+BookNumber+"')");
             JOptionPane.showMessageDialog(null,"Succesfully Updated");
-            Refresh pop = Refresh.getRefresh();
+            
             
             this.dispose();
             new AddNewBookJframe().setVisible(true);
             
 
         }
-        catch (SQLException | HeadlessException e)
+        catch (Exception e)
         {
-            JOptionPane.showMessageDialog(null,"An Error Occured.");
+            JOptionPane.showMessageDialog(null,e);
             this.dispose();
             new MainView().setVisible(true);
         }

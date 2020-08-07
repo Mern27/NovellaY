@@ -32,10 +32,10 @@ public class ConnectionProvider {
            
        } catch (Exception e) {
            
-           System.out.println("Unable to Connect");
-           //return null;
+           System.out.println(e);
+           return null;
        }
-        return null;
+        
     
     
       
