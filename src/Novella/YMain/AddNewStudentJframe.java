@@ -59,35 +59,41 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Student Index:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Student Name:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Student Class:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Student Address:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Student Island:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Student Phone:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         studentIndexjField.setBackground(new java.awt.Color(255, 255, 255));
         studentIndexjField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -97,7 +103,7 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
                 studentIndexjFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(studentIndexjField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 180, -1));
+        jPanel1.add(studentIndexjField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 180, -1));
 
         studentNamejField.setBackground(new java.awt.Color(255, 255, 255));
         studentNamejField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -107,23 +113,23 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
                 studentNamejFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(studentNamejField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 180, -1));
+        jPanel1.add(studentNamejField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 180, -1));
 
         studentAddressjField.setBackground(new java.awt.Color(255, 255, 255));
         studentAddressjField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         studentAddressjField.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(studentAddressjField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 180, -1));
+        jPanel1.add(studentAddressjField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 180, -1));
 
         studentIslandjField.setBackground(new java.awt.Color(255, 255, 255));
         studentIslandjField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         studentIslandjField.setForeground(new java.awt.Color(0, 0, 0));
         studentIslandjField.setText("R.Meedhoo");
-        jPanel1.add(studentIslandjField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 180, -1));
+        jPanel1.add(studentIslandjField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 180, -1));
 
         studentPhonejField.setBackground(new java.awt.Color(255, 255, 255));
         studentPhonejField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         studentPhonejField.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(studentPhonejField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 180, -1));
+        jPanel1.add(studentPhonejField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 180, -1));
 
         jButton1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButton1.setText("Save");
@@ -132,7 +138,7 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButton2.setText("Cancel");
@@ -141,7 +147,7 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButton3.setText("Save & Add New");
@@ -150,12 +156,12 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
 
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "L.K.G", "U.K.G", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 9", "Grade 10", "Grade 11", "Grade 12" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 180, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 180, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,19 +171,20 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Add New Student");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/AddNewStudentJFrame.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/ISSUE BOOK PAGE.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -70, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 380));
 
-        setSize(new java.awt.Dimension(448, 373));
+        setSize(new java.awt.Dimension(372, 373));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -209,6 +216,8 @@ public class AddNewStudentJframe extends javax.swing.JFrame {
         Statement st = con.createStatement();
         st.executeUpdate("insert into student values('"+studentIndex+"','"+studentName+"','"+studentAddress+"','"+studentIsland+"','"+studentClass+"','"+studentPhone+"')");
             JOptionPane.showMessageDialog(null , "Successfully Updated");
+            
+            con.close();
             
             this.dispose();
             b.setVisible(true);
