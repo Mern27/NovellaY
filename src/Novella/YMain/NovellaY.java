@@ -23,6 +23,7 @@ public class NovellaY {
         // TODO code application logic here
          
          MainView b = new MainView();
+         LoginPage c = new LoginPage();
          
          SplashScreen a = new SplashScreen();
          a.setVisible(true);
@@ -38,7 +39,7 @@ public class NovellaY {
                    if(i==100) 
                    {
                      a.setVisible(false);
-                     b.setVisible(true);
+                     c.setVisible(true);
                     }
           
                }

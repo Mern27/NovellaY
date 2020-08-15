@@ -26,7 +26,7 @@ public class ConnectionProvider {
            
            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/novelladatabase", "root" , "");
            
-           System.out.println("Connected");
+           //System.out.println("Connected");
            return con;
     
            
