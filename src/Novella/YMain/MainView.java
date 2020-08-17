@@ -66,7 +66,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        issueBookDateget = new com.toedter.calendar.JDateChooser();
         jLabel19 = new javax.swing.JLabel();
         RecievejPanel = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -355,9 +355,9 @@ public class MainView extends javax.swing.JFrame {
         });
         IssueBookjPanel.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
 
-        jDateChooser1.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser1.setForeground(new java.awt.Color(0, 0, 0));
-        IssueBookjPanel.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 140, -1));
+        issueBookDateget.setBackground(new java.awt.Color(255, 255, 255));
+        issueBookDateget.setForeground(new java.awt.Color(0, 0, 0));
+        IssueBookjPanel.add(issueBookDateget, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 140, -1));
 
         jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
@@ -936,10 +936,13 @@ public class MainView extends javax.swing.JFrame {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT student.studentIndex,student.studentName,student.studentClass,student.studentAddress,student.studentIsland,student.studentPhone from student");
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-            //ResultSet rsl = st.executeQuery("SELECT books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookAvlAmount,books.BookNumber from books");
-           // jTable2.setModel(DbUtils.resultSetToTableModel(rsl));
+            ResultSet rsl = st.executeQuery("SELECT books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookAvlAmount,books.BookNumber from books");
+            jTable2.setModel(DbUtils.resultSetToTableModel(rsl));
             ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate from issue");
             jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
+            ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
+            jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
+            
             
             String query = "select count(*) from books";
             ResultSet rs2 = st.executeQuery(query);
@@ -1119,7 +1122,7 @@ public class MainView extends javax.swing.JFrame {
         String issueISBN = ISBNSearchField.getText();
         String issueTitle = BookTitleget.getText();
         String issueAuthor = BookAuthorget.getText();
-        String issueDate = dFormat.format (jDateChooser1.getDate());
+        String issueDate = dFormat.format (issueBookDateget.getDate());
         
         try
         {
@@ -1233,23 +1236,25 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
         SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy");
         
-        String returnName = returnNameget.getText();
-        String returnTitle = returnBookget.getText();
-        String returnIndex = returnIndexget.getText();
-        String returnGrade = returnGradeget.getText();
-        String returnAuthor = returnAuthorget.getText();
-        String returnISBN = returnISBNget.getText();
-        String returnDate = dFormat.format (returnDateget.getDate());
+        String bookrsName = returnNameget.getText();
+        String bookrsTitle = returnBookget.getText();
+        String bookrsIndex = returnIndexget.getText();
+        String bookrsGrade = returnGradeget.getText();
+        String bookrsAuthor = returnAuthorget.getText();
+        String bookrsISBN = returnISBNget.getText();
+        String bookrsDate = dFormat.format (returnDateget.getDate());
+        
         
         try
         {
             Connection con = ConnectionProvider.getCon();
             Statement st = con.createStatement();
+            Statement st2 = con.createStatement();
             
-            //st.executeUpdate("insert into issue values('"+issueIndex+"','"+issueName+"','"+issueGrade+"','"+issueISBN+"','"+issueTitle+"','"+issueAuthor+"','"+issueDate+"')");
-            st.executeUpdate("INSERT INTO return values('"+returnIndex+"','"+returnName+"','"+returnGrade+"','"+returnISBN+"','"+returnTitle+"','"+returnAuthor+"','"+returnDate+"')");
+            st2.executeUpdate("insert into bookrs values('"+bookrsIndex+"','"+bookrsName+"','"+bookrsGrade+"','"+bookrsISBN+"','"+bookrsTitle+"','"+bookrsAuthor+"','"+bookrsDate+"')");
             
-            //st.executeUpdate("DELETE FROM issue where issueIndex='"+returnsIndex+"' and issueTitle='"+returnsTitle+"'");
+            st.executeUpdate("DELETE FROM issue where issueIndex='"+bookrsIndex+"' and issueTitle='"+bookrsTitle+"'");
+            
             
             JOptionPane.showMessageDialog(null, "Succesfully Returned");
             this.setVisible(false);
@@ -1259,7 +1264,7 @@ public class MainView extends javax.swing.JFrame {
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
-            System.out.println(e);
+            
         }
     }//GEN-LAST:event_jButton7MouseClicked
 
@@ -1326,6 +1331,7 @@ public class MainView extends javax.swing.JFrame {
     public javax.swing.JPanel StudentTables;
     private javax.swing.JLabel StudentTablesLabel;
     private javax.swing.JLabel UnreturnedBooksLabel;
+    private com.toedter.calendar.JDateChooser issueBookDateget;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1334,7 +1340,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JCheckBox jCheckBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
