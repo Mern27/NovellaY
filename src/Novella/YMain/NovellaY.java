@@ -39,7 +39,7 @@ public class NovellaY {
                    if(i==100) 
                    {
                      a.setVisible(false);
-                     b.setVisible(true);
+                     c.setVisible(true);
                     }
           
                }
