@@ -726,112 +726,112 @@ public class MainView extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Book ISBN:");
-        AddNewBookjPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+        AddNewBookjPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Book Title:");
-        AddNewBookjPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
+        AddNewBookjPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Book DDC:");
-        AddNewBookjPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+        AddNewBookjPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Publisher:");
-        AddNewBookjPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        AddNewBookjPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
 
         jLabel48.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(0, 0, 0));
         jLabel48.setText("Subject:");
-        AddNewBookjPanel.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+        AddNewBookjPanel.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
 
         jLabel49.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(0, 0, 0));
         jLabel49.setText("Author:");
-        AddNewBookjPanel.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+        AddNewBookjPanel.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, -1, -1));
 
         jLabel50.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(0, 0, 0));
         jLabel50.setText("Year:");
-        AddNewBookjPanel.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        AddNewBookjPanel.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(0, 0, 0));
         jLabel51.setText("Pages:");
-        AddNewBookjPanel.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
+        AddNewBookjPanel.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
 
         jLabel52.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(0, 0, 0));
         jLabel52.setText("Amount of Copies Availiable:");
-        AddNewBookjPanel.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, -1, -1));
+        AddNewBookjPanel.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
 
         jLabel53.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(0, 0, 0));
         jLabel53.setText("Book Number:");
-        AddNewBookjPanel.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
+        AddNewBookjPanel.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
 
         jISBN.setBackground(new java.awt.Color(51, 102, 255));
         jISBN.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jISBN.setForeground(new java.awt.Color(0, 0, 0));
         jISBN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 204, -1));
+        AddNewBookjPanel.add(jISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 204, -1));
 
         jTitle.setBackground(new java.awt.Color(51, 102, 255));
         jTitle.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTitle.setForeground(new java.awt.Color(0, 0, 0));
         jTitle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 204, -1));
+        AddNewBookjPanel.add(jTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 204, -1));
 
         jDDC.setBackground(new java.awt.Color(51, 102, 255));
         jDDC.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jDDC.setForeground(new java.awt.Color(0, 0, 0));
         jDDC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jDDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 204, -1));
+        AddNewBookjPanel.add(jDDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 204, -1));
 
         jPublisher.setBackground(new java.awt.Color(51, 102, 255));
         jPublisher.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jPublisher.setForeground(new java.awt.Color(0, 0, 0));
         jPublisher.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jPublisher, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 204, -1));
+        AddNewBookjPanel.add(jPublisher, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 204, -1));
 
         jSubject.setBackground(new java.awt.Color(51, 102, 255));
         jSubject.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jSubject.setForeground(new java.awt.Color(0, 0, 0));
         jSubject.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jSubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 204, -1));
+        AddNewBookjPanel.add(jSubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 204, -1));
 
         jAuthor.setBackground(new java.awt.Color(51, 102, 255));
         jAuthor.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jAuthor.setForeground(new java.awt.Color(0, 0, 0));
         jAuthor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 204, -1));
+        AddNewBookjPanel.add(jAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 204, -1));
 
         jYear.setBackground(new java.awt.Color(51, 102, 255));
         jYear.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jYear.setForeground(new java.awt.Color(0, 0, 0));
         jYear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 94, -1));
+        AddNewBookjPanel.add(jYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 94, -1));
 
         jPages.setBackground(new java.awt.Color(51, 102, 255));
         jPages.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jPages.setForeground(new java.awt.Color(0, 0, 0));
         jPages.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jPages, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 94, -1));
+        AddNewBookjPanel.add(jPages, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 94, -1));
 
         jLocation.setBackground(new java.awt.Color(51, 102, 255));
         jLocation.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLocation.setForeground(new java.awt.Color(0, 0, 0));
         jLocation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 94, -1));
+        AddNewBookjPanel.add(jLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 94, -1));
 
         jBookNumber.setBackground(new java.awt.Color(51, 102, 255));
         jBookNumber.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jBookNumber.setForeground(new java.awt.Color(0, 0, 0));
         jBookNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        AddNewBookjPanel.add(jBookNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 187, -1));
+        AddNewBookjPanel.add(jBookNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 187, -1));
 
         jButton3.setText("jButton3");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -839,7 +839,7 @@ public class MainView extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
-        AddNewBookjPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, -1, -1));
+        AddNewBookjPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 370, -1, -1));
 
         jTabbedPane1.addTab("tab3", AddNewBookjPanel);
 
@@ -1382,8 +1382,74 @@ public class MainView extends javax.swing.JFrame {
                           st.executeUpdate("insert into issue values('"+issueIndex+"','"+issueName+"','"+issueGrade+"','"+issueISBN+"','"+issueTitle+"','"+issueAuthor+"','"+issueDate+"')");
                           
                           JOptionPane.showMessageDialog(null,"Succesfully Issued");
-                          this.setVisible(false);
-                          new MainView().setVisible(true);
+                          IndexSearchField.setText(null);
+                          StudentNameget.setText(null);
+                          StudentGradeget.setText(null);
+                          ISBNSearchField.setText(null);
+                          BookTitleget.setText(null);
+                          BookAuthorget.setText(null);
+                          issueBookDateget.setDate(null);
+                          StudentGradeget.setText(null);
+                          
+                          //this.setVisible(false);
+                          //new MainView().setVisible(true);
+                          ResultSet rs8 = st.executeQuery("SELECT student.studentIndex,student.studentName,student.studentClass,student.studentAddress,student.studentIsland,student.studentPhone from student");
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs8));
+            ResultSet rs7 = st.executeQuery("SELECT books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookAvlAmount,books.BookNumber from books");
+            jTable2.setModel(DbUtils.resultSetToTableModel(rs7));
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate from issue");
+            jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
+            ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
+            jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
+                          String query = "select count(*) from books";
+            ResultSet rs2 = st.executeQuery(query);
+            //Refreshing Number of Books Label
+            if (rs2.next())
+            {
+                String p = rs2.getString(1);
+                
+                String quer = "select count(*) from student";
+                ResultSet rs3 = st.executeQuery(quer);
+                NumberOfBooksjLabel.setText(p);
+                
+                if (rs3.next())
+                {
+                    String q = rs3.getString(1);
+                    NumberOfStudentjLabel.setText(q);
+                    
+                    String queri = "select count(*) from issue";
+                    ResultSet rs4 = st.executeQuery(queri);
+                    
+                    if (rs4.next())
+                    {
+                        int count;
+                        count = rs4.getInt(1);
+                        
+                        String county = rs4.getString(1);
+                       
+                        if(count < 9)
+                        {
+                            UnreturnedBooksLabel.setText(0+county);
+                        }
+                        else
+                        {
+                            UnreturnedBooksLabel.setText(county);
+                        }
+                          
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Students");
+                }
+                 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Books");
+                
+                new MainView().setVisible(true);
+            } 
+        }
                       }
                       else
                       JOptionPane.showConfirmDialog(null, "Incorrect Student Index");    
@@ -1449,8 +1515,76 @@ public class MainView extends javax.swing.JFrame {
             
             
             JOptionPane.showMessageDialog(null, "Succesfully Returned");
-            this.setVisible(false);
-            new MainView().setVisible(true);
+            //this.setVisible(false);
+            //new MainView().setVisible(true);
+            returnNameget.setText(null);
+            returnBookget.setText(null);
+            returnIndexget.setText(null);
+            returnGradeget.setText(null);
+            returnAuthorget.setText(null);
+            returnISBNget.setText(null);
+            returnDateget.setDate(null);
+            
+            ResultSet rs8 = st.executeQuery("SELECT student.studentIndex,student.studentName,student.studentClass,student.studentAddress,student.studentIsland,student.studentPhone from student");
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs8));
+            ResultSet rsl = st.executeQuery("SELECT books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookAvlAmount,books.BookNumber from books");
+            jTable2.setModel(DbUtils.resultSetToTableModel(rsl));
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate from issue");
+            jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
+            ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
+            jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
+            
+            String query = "select count(*) from books";
+            ResultSet rs2 = st.executeQuery(query);
+            //Refreshing Number of Books Label
+            if (rs2.next())
+            {
+                String p = rs2.getString(1);
+                
+                String quer = "select count(*) from student";
+                ResultSet rs3 = st.executeQuery(quer);
+                NumberOfBooksjLabel.setText(p);
+                
+                if (rs3.next())
+                {
+                    String q = rs3.getString(1);
+                    NumberOfStudentjLabel.setText(q);
+                    
+                    String queri = "select count(*) from issue";
+                    ResultSet rs4 = st.executeQuery(queri);
+                    
+                    if (rs4.next())
+                    {
+                        int count;
+                        count = rs4.getInt(1);
+                        
+                        String county = rs4.getString(1);
+                       
+                        if(count < 9)
+                        {
+                            UnreturnedBooksLabel.setText(0+county);
+                        }
+                        else
+                        {
+                            UnreturnedBooksLabel.setText(county);
+                        }
+                        
+                        
+                        
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Students");
+                }
+                 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Books");
+                
+                new MainView().setVisible(true);
+            } 
+        }
             
         }
         catch(Exception e)
@@ -1512,12 +1646,63 @@ public class MainView extends javax.swing.JFrame {
         try
         {
             Connection con = ConnectionProvider.getCon();
-            Statement st1 = con.createStatement();
-            st1.executeUpdate("insert into books values('"+ISBN+"','"+Title+"','"+DDC+"','"+Publisher+"','"+Subject+"','"+Author+"','"+Year+"','"+Pages+"','"+BookAvlAmount+"','"+BookNumber+"')");
+            Statement st = con.createStatement();
+            st.executeUpdate("insert into books values('"+ISBN+"','"+Title+"','"+DDC+"','"+Publisher+"','"+Subject+"','"+Author+"','"+Year+"','"+Pages+"','"+BookAvlAmount+"','"+BookNumber+"')");
             JOptionPane.showMessageDialog(null,"Succesfully Updated");
-            this.dispose();
-            b.setVisible(true);
-            b.jTabbedPane1.setSelectedComponent(AddNewBookjPanel);
+            //this.dispose();
+            //b.setVisible(true);
+            //b.jTabbedPane1.setSelectedComponent(AddNewBookjPanel);
+            String query = "select count(*) from books";
+            ResultSet rs2 = st.executeQuery(query);
+            //Refreshing Number of Books Label
+            if (rs2.next())
+            {
+                String p = rs2.getString(1);
+                
+                String quer = "select count(*) from student";
+                ResultSet rs3 = st.executeQuery(quer);
+                NumberOfBooksjLabel.setText(p);
+                
+                if (rs3.next())
+                {
+                    String q = rs3.getString(1);
+                    NumberOfStudentjLabel.setText(q);
+                    
+                    String queri = "select count(*) from issue";
+                    ResultSet rs4 = st.executeQuery(queri);
+                    
+                    if (rs4.next())
+                    {
+                        int count;
+                        count = rs4.getInt(1);
+                        
+                        String county = rs4.getString(1);
+                       
+                        if(count < 9)
+                        {
+                            UnreturnedBooksLabel.setText(0+county);
+                        }
+                        else
+                        {
+                            UnreturnedBooksLabel.setText(county);
+                        }
+                        
+                        
+                        
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Students");
+                }
+                 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Books");
+                
+                new MainView().setVisible(true);
+            } 
+        }
             
 
         }
