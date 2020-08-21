@@ -86,14 +86,12 @@ public class LoginPage extends javax.swing.JFrame {
         Usernameget.setBackground(new java.awt.Color(255, 255, 255));
         Usernameget.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         Usernameget.setForeground(new java.awt.Color(0, 0, 0));
-        Usernameget.setText("admin");
         Usernameget.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanel1.add(Usernameget, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 90, -1));
 
         Passwordget.setBackground(new java.awt.Color(255, 255, 255));
         Passwordget.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         Passwordget.setForeground(new java.awt.Color(0, 0, 0));
-        Passwordget.setText("1234");
         Passwordget.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanel1.add(Passwordget, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, -1));
 
@@ -138,6 +136,7 @@ public class LoginPage extends javax.swing.JFrame {
             Passwordget.setText(null);
             
         }
+        
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked

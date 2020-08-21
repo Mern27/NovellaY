@@ -32,7 +32,7 @@ public class NovellaY {
        try {
            for ( int i = 0; i <= 100; i++) {
                
-                   Thread.sleep(10);
+                   Thread.sleep(20);
                    
                    
                   a.jLabel2.setText(Integer.toString(i)+"%"); 
