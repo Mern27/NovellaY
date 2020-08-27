@@ -130,12 +130,32 @@ public class LoginPage extends javax.swing.JFrame {
             }
         }
         else
+        
+            if(username.contains("teachers"))
+        {
+            if(password.contains("1234"))
+            {
+               new MainViewTeachers().setVisible(true);
+               setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null , "Wrong Password");
+                Usernameget.setText(null);
+                Passwordget.setText(null);
+            }
+        }
+        else
         {
             JOptionPane.showMessageDialog(null , "Wrong Username");
             Usernameget.setText(null);
             Passwordget.setText(null);
             
         }
+            
+            
+        
+        
         
     }//GEN-LAST:event_jLabel4MouseClicked
 

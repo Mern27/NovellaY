@@ -60,6 +60,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         issueBookDateget = new com.toedter.calendar.JDateChooser();
@@ -72,6 +73,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
+        expireBookDateget = new com.toedter.calendar.JDateChooser();
         RecievejPanel = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -99,12 +101,9 @@ public class MainView extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        Statistics = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        History = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         BookDirectory = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -168,7 +167,13 @@ public class MainView extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        Settings = new javax.swing.JPanel();
+        jLabel82 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        IssuedBooksList = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
         StudentDashboardLabel = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         IssueBook5 = new javax.swing.JLabel();
@@ -183,10 +188,14 @@ public class MainView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         StudentTablesLabel = new javax.swing.JLabel();
         NumberOfStudentjLabel = new javax.swing.JLabel();
+        StudentDashboardLabel1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Novella LMS RAEC");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
         addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 formComponentAdded(evt);
@@ -276,8 +285,8 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Issue Date:");
-        IssueBookjPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, 40));
+        jLabel12.setText("Due Date:");
+        IssueBookjPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, 40));
 
         IndexSearchField.setBackground(new java.awt.Color(255, 255, 255));
         IndexSearchField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -320,8 +329,8 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel14.setText("Book ISBN:");
-        IssueBookjPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 80, 20));
+        jLabel14.setText("Book Identification:");
+        IssueBookjPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 150, 20));
 
         ISBNSearchField.setBackground(new java.awt.Color(255, 255, 255));
         ISBNSearchField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -374,6 +383,11 @@ public class MainView extends javax.swing.JFrame {
         jLabel16.setText("Book Title:");
         IssueBookjPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, -1, -1));
 
+        jLabel81.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel81.setText("Issue Date:");
+        IssueBookjPanel.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, -1, 40));
+
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
@@ -388,7 +402,7 @@ public class MainView extends javax.swing.JFrame {
 
         issueBookDateget.setBackground(new java.awt.Color(255, 255, 255));
         issueBookDateget.setForeground(new java.awt.Color(0, 0, 0));
-        IssueBookjPanel.add(issueBookDateget, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 140, 20));
+        IssueBookjPanel.add(issueBookDateget, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 140, 20));
 
         jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
@@ -427,7 +441,8 @@ public class MainView extends javax.swing.JFrame {
                 jLabel38MouseClicked(evt);
             }
         });
-        IssueBookjPanel.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 120, 50));
+        IssueBookjPanel.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 120, 50));
+        IssueBookjPanel.add(expireBookDateget, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 339, 140, 20));
 
         jTabbedPane1.addTab("tab1", IssueBookjPanel);
 
@@ -585,20 +600,7 @@ public class MainView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab2", RecievejPanel);
 
-        Statistics.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable3);
+        History.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -613,50 +615,36 @@ public class MainView extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable4);
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Issued Books");
-
         jLabel22.setBackground(new java.awt.Color(255, 255, 255));
         jLabel22.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Returned Books");
 
-        javax.swing.GroupLayout StatisticsLayout = new javax.swing.GroupLayout(Statistics);
-        Statistics.setLayout(StatisticsLayout);
-        StatisticsLayout.setHorizontalGroup(
-            StatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StatisticsLayout.createSequentialGroup()
-                .addGroup(StatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StatisticsLayout.createSequentialGroup()
+        javax.swing.GroupLayout HistoryLayout = new javax.swing.GroupLayout(History);
+        History.setLayout(HistoryLayout);
+        HistoryLayout.setHorizontalGroup(
+            HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HistoryLayout.createSequentialGroup()
+                .addGroup(HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(HistoryLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(StatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4)))
-                    .addGroup(StatisticsLayout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(HistoryLayout.createSequentialGroup()
                         .addGap(362, 362, 362)
-                        .addComponent(jLabel22))
-                    .addGroup(StatisticsLayout.createSequentialGroup()
-                        .addGap(366, 366, 366)
-                        .addComponent(jLabel10)))
+                        .addComponent(jLabel22)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
-        StatisticsLayout.setVerticalGroup(
-            StatisticsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StatisticsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10)
-                .addGap(11, 11, 11)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+        HistoryLayout.setVerticalGroup(
+            HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HistoryLayout.createSequentialGroup()
+                .addContainerGap(231, Short.MAX_VALUE)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("tab4", Statistics);
+        jTabbedPane1.addTab("tab4", History);
 
         BookDirectory.setBackground(new java.awt.Color(255, 255, 255));
         BookDirectory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1008,15 +996,64 @@ public class MainView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab3", AddNewBookjPanel);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 850, 470));
+        Settings.setBackground(new java.awt.Color(255, 255, 255));
+        Settings.setForeground(new java.awt.Color(255, 255, 255));
+        Settings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 190, 10));
+        jLabel82.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel82.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel82.setText("Reset History");
+        Settings.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+
+        jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        Settings.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+
+        jTabbedPane1.addTab("tab8", Settings);
+
+        IssuedBooksList.setBackground(new java.awt.Color(255, 255, 255));
+        IssuedBooksList.setForeground(new java.awt.Color(255, 255, 255));
+        IssuedBooksList.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable3.setBackground(new java.awt.Color(255, 255, 255));
+        jTable3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(0, 0, 0));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable3.setSelectionBackground(new java.awt.Color(0, 204, 255));
+        jTable3.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane3.setViewportView(jTable3);
+
+        IssuedBooksList.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 790, 360));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Issued Books");
+        IssuedBooksList.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+
+        jTabbedPane1.addTab("tab9", IssuedBooksList);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 850, 470));
 
         StudentDashboardLabel.setBackground(new java.awt.Color(255, 255, 255));
         StudentDashboardLabel.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         StudentDashboardLabel.setForeground(new java.awt.Color(255, 255, 255));
-        StudentDashboardLabel.setText("Student Dashboard");
+        StudentDashboardLabel.setText("Issued List");
         StudentDashboardLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 StudentDashboardLabelMouseClicked(evt);
@@ -1028,7 +1065,7 @@ public class MainView extends javax.swing.JFrame {
                 StudentDashboardLabelMouseExited(evt);
             }
         });
-        getContentPane().add(StudentDashboardLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+        getContentPane().add(StudentDashboardLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 90, -1));
 
         jLabel46.setBackground(new java.awt.Color(255, 255, 255));
         jLabel46.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
@@ -1103,7 +1140,7 @@ public class MainView extends javax.swing.JFrame {
                 IssueBook2MouseExited(evt);
             }
         });
-        getContentPane().add(IssueBook2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 70, 30));
+        getContentPane().add(IssueBook2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 70, 30));
 
         IssueBook1.setBackground(new java.awt.Color(255, 255, 255));
         IssueBook1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -1141,8 +1178,8 @@ public class MainView extends javax.swing.JFrame {
 
         NumberOfBooksjLabel.setFont(new java.awt.Font("Century Gothic", 0, 32)); // NOI18N
         NumberOfBooksjLabel.setForeground(new java.awt.Color(255, 255, 255));
-        NumberOfBooksjLabel.setText("000");
-        getContentPane().add(NumberOfBooksjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, -1, 30));
+        NumberOfBooksjLabel.setText("00");
+        getContentPane().add(NumberOfBooksjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, -1, 30));
 
         UnreturnedBooksLabel.setBackground(new java.awt.Color(255, 255, 255));
         UnreturnedBooksLabel.setFont(new java.awt.Font("Century Gothic", 0, 32)); // NOI18N
@@ -1183,8 +1220,25 @@ public class MainView extends javax.swing.JFrame {
 
         NumberOfStudentjLabel.setFont(new java.awt.Font("Century Gothic", 0, 32)); // NOI18N
         NumberOfStudentjLabel.setForeground(new java.awt.Color(255, 255, 255));
-        NumberOfStudentjLabel.setText("000");
-        getContentPane().add(NumberOfStudentjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, -1, 30));
+        NumberOfStudentjLabel.setText("00");
+        getContentPane().add(NumberOfStudentjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 540, -1, 30));
+
+        StudentDashboardLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        StudentDashboardLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        StudentDashboardLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        StudentDashboardLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/Setting icon.png"))); // NOI18N
+        StudentDashboardLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StudentDashboardLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                StudentDashboardLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                StudentDashboardLabel1MouseExited(evt);
+            }
+        });
+        getContentPane().add(StudentDashboardLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 50, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/HOME 22.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -1195,16 +1249,16 @@ public class MainView extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1140, Short.MAX_VALUE)
+            .addGap(0, 1130, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 600));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 590));
 
-        setSize(new java.awt.Dimension(1149, 633));
+        setSize(new java.awt.Dimension(1137, 631));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1250,8 +1304,8 @@ public class MainView extends javax.swing.JFrame {
 
     private void StudentDashboardLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDashboardLabelMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Coming Soon :)");
-        //jTabbedPane1.setSelectedComponent(StudentDashboard);
+        
+        jTabbedPane1.setSelectedComponent(IssuedBooksList);
     }//GEN-LAST:event_StudentDashboardLabelMouseClicked
 
     private void IssueBook1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IssueBook1MouseClicked
@@ -1266,16 +1320,15 @@ public class MainView extends javax.swing.JFrame {
         {
             Connection con = ConnectionProvider.getCon();
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select student.studentIndex AS 'Student Index',student.studentName AS 'Name',student.studentAddress AS 'Address',student.studentClass AS 'Grade',student.studentIsland AS 'Island',student.studentPhone AS 'Phone No' from student");
-            StudentListTable.setModel(DbUtils.resultSetToTableModel(rs));
+            //Refresh Begin
+            ResultSet rs8 = st.executeQuery("select student.studentIndex AS 'Student Index',student.studentName AS 'Name',student.studentAddress AS 'Address',student.studentClass AS 'Grade',student.studentIsland AS 'Island',student.studentPhone AS 'Phone No' from student");
+            StudentListTable.setModel(DbUtils.resultSetToTableModel(rs8));
             ResultSet bk = st.executeQuery("select books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
             BooksListget.setModel(DbUtils.resultSetToTableModel(bk));
-            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate from issue");
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate,issue.issueExpire from issue");
             jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
             ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
             jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
-            
-            //setting issue Date to today
             
             
             
@@ -1284,28 +1337,53 @@ public class MainView extends javax.swing.JFrame {
             //Refreshing Number of Books Label
             if (rs2.next())
             {
+                int countbooks;
+                countbooks = rs2.getInt(1);
+                
                 String p = rs2.getString(1);
+                
+                if(countbooks <= 9)
+                {
+                    NumberOfBooksjLabel.setText(0+p);
+                }
+                else
+                {
+                    NumberOfBooksjLabel.setText(p);
+                }
                 
                 String quer = "select count(*) from student";
                 ResultSet rs3 = st.executeQuery(quer);
-                NumberOfBooksjLabel.setText(p);
+                
                 
                 if (rs3.next())
                 {
+                    int countstudent;
+                    countstudent = rs3.getInt(1);
+                    
                     String q = rs3.getString(1);
-                    NumberOfStudentjLabel.setText(q);
+                    
+                    if(countstudent <= 9)
+                    {
+                       NumberOfStudentjLabel.setText(0+q); 
+                    }
+                    else
+                    {
+                        NumberOfStudentjLabel.setText(q);
+                        
+                    }
+                    
                     
                     String queri = "select count(*) from issue";
                     ResultSet rs4 = st.executeQuery(queri);
                     
                     if (rs4.next())
                     {
-                        int count;
-                        count = rs4.getInt(1);
+                        int countunreturnedbooks;
+                        countunreturnedbooks = rs4.getInt(1);
                         
                         String county = rs4.getString(1);
                        
-                        if(count <= 9)
+                        if(countunreturnedbooks <= 9)
                         {
                             UnreturnedBooksLabel.setText(0+county);
                         }
@@ -1313,7 +1391,7 @@ public class MainView extends javax.swing.JFrame {
                         {
                             UnreturnedBooksLabel.setText(county);
                         }
-                        
+                         
                 }
                 else
                 {
@@ -1385,7 +1463,7 @@ public class MainView extends javax.swing.JFrame {
 
     private void IssueBook2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IssueBook2MouseClicked
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedComponent(Statistics);
+        jTabbedPane1.setSelectedComponent(History);
     }//GEN-LAST:event_IssueBook2MouseClicked
 
     private void IssueBook2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IssueBook2MouseEntered
@@ -1519,6 +1597,7 @@ public class MainView extends javax.swing.JFrame {
     private void jLabel38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel38MouseClicked
         // TODO add your handling code here:
         SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat dFormat2 = new SimpleDateFormat("dd-MM-yyyy");
         String issueIndex = IndexSearchField.getText();
         String issueName = StudentNameget.getText();
         String issueGrade = StudentGradeget.getText();
@@ -1526,7 +1605,8 @@ public class MainView extends javax.swing.JFrame {
         String issueTitle = BookTitleget.getText();
         String issueAuthor = BookAuthorget.getText();
         String issueDate = dFormat.format (issueBookDateget.getDate());
-        
+        String issueExpire = dFormat.format (expireBookDateget.getDate());
+                
         try
         {
             Connection con = ConnectionProvider.getCon();
@@ -1543,7 +1623,7 @@ public class MainView extends javax.swing.JFrame {
                       if(rsl.next())
                       {
                           
-                          st.executeUpdate("insert into issue values('"+issueIndex+"','"+issueName+"','"+issueGrade+"','"+issueISBN+"','"+issueTitle+"','"+issueAuthor+"','"+issueDate+"')");
+                          st.executeUpdate("insert into issue values('"+issueIndex+"','"+issueName+"','"+issueGrade+"','"+issueISBN+"','"+issueTitle+"','"+issueAuthor+"','"+issueDate+"','"+issueExpire+"')");
                           
                           JOptionPane.showMessageDialog(null,"Succesfully Issued");
                           IndexSearchField.setText(null);
@@ -1557,41 +1637,70 @@ public class MainView extends javax.swing.JFrame {
                           
                           //this.setVisible(false);
                           //new MainView().setVisible(true);
-                          ResultSet rs8 = st.executeQuery("SELECT student.studentIndex,student.studentName,student.studentClass,student.studentAddress,student.studentIsland,student.studentPhone from student");
+                          //Refresh Begin
+            ResultSet rs8 = st.executeQuery("select student.studentIndex AS 'Student Index',student.studentName AS 'Name',student.studentAddress AS 'Address',student.studentClass AS 'Grade',student.studentIsland AS 'Island',student.studentPhone AS 'Phone No' from student");
             StudentListTable.setModel(DbUtils.resultSetToTableModel(rs8));
-            ResultSet rs7 = st.executeQuery("SELECT books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
-            BooksListget.setModel(DbUtils.resultSetToTableModel(rs7));
-            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate from issue");
+            ResultSet bk = st.executeQuery("select books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
+            BooksListget.setModel(DbUtils.resultSetToTableModel(bk));
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate,issue.issueExpire from issue");
             jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
             ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
             jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
-                          String query = "select count(*) from books";
+            
+            
+            
+            String query = "select count(*) from books";
             ResultSet rs2 = st.executeQuery(query);
             //Refreshing Number of Books Label
             if (rs2.next())
             {
+                int countbooks;
+                countbooks = rs2.getInt(1);
+                
                 String p = rs2.getString(1);
+                
+                if(countbooks <= 9)
+                {
+                    NumberOfBooksjLabel.setText(0+p);
+                }
+                else
+                {
+                    NumberOfBooksjLabel.setText(p);
+                }
                 
                 String quer = "select count(*) from student";
                 ResultSet rs3 = st.executeQuery(quer);
-                NumberOfBooksjLabel.setText(p);
+                
                 
                 if (rs3.next())
                 {
+                    int countstudent;
+                    countstudent = rs3.getInt(1);
+                    
                     String q = rs3.getString(1);
-                    NumberOfStudentjLabel.setText(q);
+                    
+                    if(countstudent <= 9)
+                    {
+                       NumberOfStudentjLabel.setText(0+q); 
+                    }
+                    else
+                    {
+                        NumberOfStudentjLabel.setText(q);
+                        
+                    }
+                    
                     
                     String queri = "select count(*) from issue";
                     ResultSet rs4 = st.executeQuery(queri);
                     
                     if (rs4.next())
                     {
-                        int count;
-                        count = rs4.getInt(1);
+                        int countunreturnedbooks;
+                        countunreturnedbooks = rs4.getInt(1);
                         
                         String county = rs4.getString(1);
                        
-                        if(count < 9)
+                        if(countunreturnedbooks <= 9)
                         {
                             UnreturnedBooksLabel.setText(0+county);
                         }
@@ -1599,7 +1708,7 @@ public class MainView extends javax.swing.JFrame {
                         {
                             UnreturnedBooksLabel.setText(county);
                         }
-                          
+                         
                 }
                 else
                 {
@@ -1639,6 +1748,7 @@ public class MainView extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery("select *from issue where issueIndex='"+returnIndex+"'"); 
             if(rs.next())
             {
+                //ResultSet rs2 =st.executeQuery("select bookrs.bookrsIndex AS 'Student Index',bookrs.bookrsName AS 'Name',bookrs.bookrsGrade AS 'Grade',bookrs.bookrsISBN AS 'ISBN',bookrs.bookrsTitle AS 'Title',bookrs.bookrsAuthor AS 'Author',bookrs.bookrsDate AS 'Date Issued' from bookrs where bookrs.bookrsIndex='"+returnIndex+"'");
                 ResultSet rs2 =st.executeQuery("select issue.issueIndex AS 'Student Index',issue.issueName AS 'Name',issue.issueGrade AS 'Grade',issue.issueISBN AS 'ISBN',issue.issueTitle AS 'Title',issue.issueAuthor AS 'Author',issue.issueDate AS 'Date Issued' from issue where issueIndex='"+returnIndex+"'");
                 jTable5.setModel(DbUtils.resultSetToTableModel(rs2));
             }
@@ -1678,53 +1788,86 @@ public class MainView extends javax.swing.JFrame {
             st.executeUpdate("DELETE FROM issue where issueIndex='"+bookrsIndex+"' and issueTitle='"+bookrsTitle+"'");
             
             
+            //st.executeUpdate("DELETE FROM bookrs where bookrsTitle='"+bookrsTitle+"'");
+            
             JOptionPane.showMessageDialog(null, "Succesfully Returned");
             //this.setVisible(false);
             //new MainView().setVisible(true);
             returnNameget.setText(null);
             returnBookget.setText(null);
-            returnIndexget.setText(null);
+            //returnIndexget.setText(null);
             returnGradeget.setText(null);
             returnAuthorget.setText(null);
             returnISBNget.setText(null);
-            returnDateget.setDate(null);
+            //returnDateget.setDate(null);
             
-            ResultSet rs8 = st.executeQuery("SELECT student.studentIndex,student.studentName,student.studentClass,student.studentAddress,student.studentIsland,student.studentPhone from student");
+            //Refresh Begin
+            ResultSet rs8 = st.executeQuery("select student.studentIndex AS 'Student Index',student.studentName AS 'Name',student.studentAddress AS 'Address',student.studentClass AS 'Grade',student.studentIsland AS 'Island',student.studentPhone AS 'Phone No' from student");
             StudentListTable.setModel(DbUtils.resultSetToTableModel(rs8));
-            ResultSet rsl = st.executeQuery("SELECT books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
-            BooksListget.setModel(DbUtils.resultSetToTableModel(rsl));
-            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate from issue");
+            ResultSet bk = st.executeQuery("select books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
+            BooksListget.setModel(DbUtils.resultSetToTableModel(bk));
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate,issue.issueExpire from issue");
             jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
             ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
             jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
+            ResultSet rs7 =st.executeQuery("select issue.issueIndex AS 'Student Index',issue.issueName AS 'Name',issue.issueGrade AS 'Grade',issue.issueISBN AS 'ISBN',issue.issueTitle AS 'Title',issue.issueAuthor AS 'Author',issue.issueDate AS 'Date Issued' from issue where issueIndex='"+returnIndexget+"'");
+            jTable5.setModel(DbUtils.resultSetToTableModel(rs7));
+            
+            
+            
             
             String query = "select count(*) from books";
             ResultSet rs2 = st.executeQuery(query);
             //Refreshing Number of Books Label
             if (rs2.next())
             {
+                int countbooks;
+                countbooks = rs2.getInt(1);
+                
                 String p = rs2.getString(1);
+                
+                if(countbooks <= 9)
+                {
+                    NumberOfBooksjLabel.setText(0+p);
+                }
+                else
+                {
+                    NumberOfBooksjLabel.setText(p);
+                }
                 
                 String quer = "select count(*) from student";
                 ResultSet rs3 = st.executeQuery(quer);
-                NumberOfBooksjLabel.setText(p);
+                
                 
                 if (rs3.next())
                 {
+                    int countstudent;
+                    countstudent = rs3.getInt(1);
+                    
                     String q = rs3.getString(1);
-                    NumberOfStudentjLabel.setText(q);
+                    
+                    if(countstudent <= 9)
+                    {
+                       NumberOfStudentjLabel.setText(0+q); 
+                    }
+                    else
+                    {
+                        NumberOfStudentjLabel.setText(q);
+                        
+                    }
+                    
                     
                     String queri = "select count(*) from issue";
                     ResultSet rs4 = st.executeQuery(queri);
                     
                     if (rs4.next())
                     {
-                        int count;
-                        count = rs4.getInt(1);
+                        int countunreturnedbooks;
+                        countunreturnedbooks = rs4.getInt(1);
                         
                         String county = rs4.getString(1);
                        
-                        if(count < 9)
+                        if(countunreturnedbooks <= 9)
                         {
                             UnreturnedBooksLabel.setText(0+county);
                         }
@@ -1732,9 +1875,7 @@ public class MainView extends javax.swing.JFrame {
                         {
                             UnreturnedBooksLabel.setText(county);
                         }
-                        
-                        
-                        
+                         
                 }
                 else
                 {
@@ -1815,34 +1956,70 @@ public class MainView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Succesfully Updated");
             //this.dispose();
             //b.setVisible(true);
-            //b.jTabbedPane1.setSelectedComponent(AddNewBookjPanel);
+            //Refresh Begin
+            ResultSet rs8 = st.executeQuery("select student.studentIndex AS 'Student Index',student.studentName AS 'Name',student.studentAddress AS 'Address',student.studentClass AS 'Grade',student.studentIsland AS 'Island',student.studentPhone AS 'Phone No' from student");
+            StudentListTable.setModel(DbUtils.resultSetToTableModel(rs8));
+            ResultSet bk = st.executeQuery("select books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
+            BooksListget.setModel(DbUtils.resultSetToTableModel(bk));
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate,issue.issueExpire from issue");
+            jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
+            ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
+            jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
+            
+            
+            
             String query = "select count(*) from books";
             ResultSet rs2 = st.executeQuery(query);
             //Refreshing Number of Books Label
             if (rs2.next())
             {
+                int countbooks;
+                countbooks = rs2.getInt(1);
+                
                 String p = rs2.getString(1);
+                
+                if(countbooks <= 9)
+                {
+                    NumberOfBooksjLabel.setText(0+p);
+                }
+                else
+                {
+                    NumberOfBooksjLabel.setText(p);
+                }
                 
                 String quer = "select count(*) from student";
                 ResultSet rs3 = st.executeQuery(quer);
-                NumberOfBooksjLabel.setText(p);
+                
                 
                 if (rs3.next())
                 {
+                    int countstudent;
+                    countstudent = rs3.getInt(1);
+                    
                     String q = rs3.getString(1);
-                    NumberOfStudentjLabel.setText(q);
+                    
+                    if(countstudent <= 9)
+                    {
+                       NumberOfStudentjLabel.setText(0+q); 
+                    }
+                    else
+                    {
+                        NumberOfStudentjLabel.setText(q);
+                        
+                    }
+                    
                     
                     String queri = "select count(*) from issue";
                     ResultSet rs4 = st.executeQuery(queri);
                     
                     if (rs4.next())
                     {
-                        int count;
-                        count = rs4.getInt(1);
+                        int countunreturnedbooks;
+                        countunreturnedbooks = rs4.getInt(1);
                         
                         String county = rs4.getString(1);
                        
-                        if(count < 9)
+                        if(countunreturnedbooks <= 9)
                         {
                             UnreturnedBooksLabel.setText(0+county);
                         }
@@ -1944,15 +2121,16 @@ public class MainView extends javax.swing.JFrame {
         st.executeUpdate("insert into student values('"+studentIndex+"','"+studentName+"','"+studentAddress+"','"+studentIsland+"','"+studentClass+"','"+studentPhone+"')");
             JOptionPane.showMessageDialog(null , "Successfully Updated");
             
-            //Refresting Number of Students
-            ResultSet rs8 = st.executeQuery("SELECT student.studentIndex,student.studentName,student.studentClass,student.studentAddress,student.studentIsland,student.studentPhone from student");
+            //Refresh Begin
+            ResultSet rs8 = st.executeQuery("select student.studentIndex AS 'Student Index',student.studentName AS 'Name',student.studentAddress AS 'Address',student.studentClass AS 'Grade',student.studentIsland AS 'Island',student.studentPhone AS 'Phone No' from student");
             StudentListTable.setModel(DbUtils.resultSetToTableModel(rs8));
-            ResultSet rsl = st.executeQuery("SELECT books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
-            BooksListget.setModel(DbUtils.resultSetToTableModel(rsl));
-            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate from issue");
+            ResultSet bk = st.executeQuery("select books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
+            BooksListget.setModel(DbUtils.resultSetToTableModel(bk));
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate,issue.issueExpire from issue");
             jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
             ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
             jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
+            
             
             
             String query = "select count(*) from books";
@@ -1960,28 +2138,53 @@ public class MainView extends javax.swing.JFrame {
             //Refreshing Number of Books Label
             if (rs2.next())
             {
+                int countbooks;
+                countbooks = rs2.getInt(1);
+                
                 String p = rs2.getString(1);
+                
+                if(countbooks <= 9)
+                {
+                    NumberOfBooksjLabel.setText(0+p);
+                }
+                else
+                {
+                    NumberOfBooksjLabel.setText(p);
+                }
                 
                 String quer = "select count(*) from student";
                 ResultSet rs3 = st.executeQuery(quer);
-                NumberOfBooksjLabel.setText(p);
+                
                 
                 if (rs3.next())
                 {
+                    int countstudent;
+                    countstudent = rs3.getInt(1);
+                    
                     String q = rs3.getString(1);
-                    NumberOfStudentjLabel.setText(q);
+                    
+                    if(countstudent <= 9)
+                    {
+                       NumberOfStudentjLabel.setText(0+q); 
+                    }
+                    else
+                    {
+                        NumberOfStudentjLabel.setText(q);
+                        
+                    }
+                    
                     
                     String queri = "select count(*) from issue";
                     ResultSet rs4 = st.executeQuery(queri);
                     
                     if (rs4.next())
                     {
-                        int count;
-                        count = rs4.getInt(1);
+                        int countunreturnedbooks;
+                        countunreturnedbooks = rs4.getInt(1);
                         
                         String county = rs4.getString(1);
                        
-                        if(count <= 9)
+                        if(countunreturnedbooks <= 9)
                         {
                             UnreturnedBooksLabel.setText(0+county);
                         }
@@ -1989,7 +2192,7 @@ public class MainView extends javax.swing.JFrame {
                         {
                             UnreturnedBooksLabel.setText(county);
                         }
-                        
+                         
                 }
                 else
                 {
@@ -2002,7 +2205,8 @@ public class MainView extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Books");
                 
                 new MainView().setVisible(true);
-            }
+            } 
+        
                 //Erasing Current Values
                 studentIndexjField.setText(null);
                 studentNamejField.setText(null);
@@ -2019,6 +2223,122 @@ public class MainView extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, e);
                 }
     }//GEN-LAST:event_jLabel80MouseClicked
+
+    private void StudentDashboardLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDashboardLabel1MouseClicked
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedComponent(Settings);
+    }//GEN-LAST:event_StudentDashboardLabel1MouseClicked
+
+    private void StudentDashboardLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDashboardLabel1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StudentDashboardLabel1MouseEntered
+
+    private void StudentDashboardLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDashboardLabel1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StudentDashboardLabel1MouseExited
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        try
+        {
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement();
+            
+            st.executeUpdate("DELETE from bookrs");
+            JOptionPane.showMessageDialog(null, "Successfull");
+            
+            //Refresh
+            ResultSet rs8 = st.executeQuery("select student.studentIndex AS 'Student Index',student.studentName AS 'Name',student.studentAddress AS 'Address',student.studentClass AS 'Grade',student.studentIsland AS 'Island',student.studentPhone AS 'Phone No' from student");
+            StudentListTable.setModel(DbUtils.resultSetToTableModel(rs8));
+            ResultSet bk = st.executeQuery("select books.ISBN,books.Title,books.DDC,books.Publisher,books.Subject,books.Author,books.Year,books.Pages,books.BookNumber AS 'Book No' from books");
+            BooksListget.setModel(DbUtils.resultSetToTableModel(bk));
+            ResultSet rs5 = st.executeQuery("select issue.issueIndex,issue.issueName,issue.issueGrade,issue.issueISBN,issue.issueTitle,issue.issueAuthor,issue.issueDate,issue.issueExpire from issue");
+            jTable3.setModel(DbUtils.resultSetToTableModel(rs5));
+            ResultSet rs9 = st.executeQuery("select bookrs.bookrsIndex,bookrs.bookrsName,bookrs.bookrsGrade,bookrs.bookrsISBN,bookrs.bookrsTitle,bookrs.bookrsAuthor,bookrs.bookrsDate from bookrs");
+            jTable4.setModel(DbUtils.resultSetToTableModel(rs9));
+            
+            
+            
+            String query = "select count(*) from books";
+            ResultSet rs2 = st.executeQuery(query);
+            //Refreshing Number of Books Label
+            if (rs2.next())
+            {
+                int countbooks;
+                countbooks = rs2.getInt(1);
+                
+                String p = rs2.getString(1);
+                
+                if(countbooks <= 9)
+                {
+                    NumberOfBooksjLabel.setText(0+p);
+                }
+                else
+                {
+                    NumberOfBooksjLabel.setText(p);
+                }
+                
+                String quer = "select count(*) from student";
+                ResultSet rs3 = st.executeQuery(quer);
+                
+                
+                if (rs3.next())
+                {
+                    int countstudent;
+                    countstudent = rs3.getInt(1);
+                    
+                    String q = rs3.getString(1);
+                    
+                    if(countstudent <= 9)
+                    {
+                       NumberOfStudentjLabel.setText(0+q); 
+                    }
+                    else
+                    {
+                        NumberOfStudentjLabel.setText(q);
+                    }
+                    
+                    String queri = "select count(*) from issue";
+                    ResultSet rs4 = st.executeQuery(queri);
+                    
+                    if (rs4.next())
+                    {
+                        int countunreturnedbooks;
+                        countunreturnedbooks = rs4.getInt(1);
+                        
+                        String county = rs4.getString(1);
+                       
+                        if(countunreturnedbooks <= 9)
+                        {
+                            UnreturnedBooksLabel.setText(0+county);
+                        }
+                        else
+                        {
+                            UnreturnedBooksLabel.setText(county);
+                        }
+                         
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Students");
+                }
+                 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Failed to retrieve Number of Books");
+                
+                new MainView().setVisible(true);
+            } 
+        }
+            
+            
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -2068,6 +2388,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel Hidebar2;
     private javax.swing.JPanel Hidebar3;
     private javax.swing.JPanel Hidebar4;
+    private javax.swing.JPanel History;
     private javax.swing.JTextField ISBNSearchField;
     private javax.swing.JTextField IndexSearchField;
     private javax.swing.JLabel IssueBook1;
@@ -2076,11 +2397,13 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel IssueBook4;
     private javax.swing.JLabel IssueBook5;
     private javax.swing.JPanel IssueBookjPanel;
+    private javax.swing.JPanel IssuedBooksList;
     public javax.swing.JLabel NumberOfBooksjLabel;
     public javax.swing.JLabel NumberOfStudentjLabel;
     private javax.swing.JPanel RecievejPanel;
-    private javax.swing.JPanel Statistics;
+    private javax.swing.JPanel Settings;
     private javax.swing.JLabel StudentDashboardLabel;
+    private javax.swing.JLabel StudentDashboardLabel1;
     private javax.swing.JTextField StudentGradeget;
     private javax.swing.JTextField StudentIndexget;
     private javax.swing.JTable StudentListTable;
@@ -2088,9 +2411,11 @@ public class MainView extends javax.swing.JFrame {
     public javax.swing.JPanel StudentTables;
     private javax.swing.JLabel StudentTablesLabel;
     private javax.swing.JLabel UnreturnedBooksLabel;
+    private com.toedter.calendar.JDateChooser expireBookDateget;
     private com.toedter.calendar.JDateChooser issueBookDateget;
     private javax.swing.JTextField jAuthor;
     private javax.swing.JTextField jBookNumber;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JTextField jDDC;
     private javax.swing.JTextField jISBN;
@@ -2173,6 +2498,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jPages;
     private javax.swing.JPanel jPanel1;
@@ -2182,7 +2509,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jSubject;
     public javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable3;
