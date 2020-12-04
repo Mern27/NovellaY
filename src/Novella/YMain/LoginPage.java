@@ -5,6 +5,12 @@
  */
 package Novella.YMain;
 
+import Novella.Database.DatabaseManager.ConnectionProvider;
+import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,15 +36,11 @@ public class LoginPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         Usernameget = new javax.swing.JTextField();
         Passwordget = new javax.swing.JPasswordField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,25 +51,23 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setText("Password");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 152, 90, 30));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/jbutton login-01.png"))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 80, 60));
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Username:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, 40));
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Password:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, 40));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 80, 60));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/jbutton cancel2-01.png"))); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -75,33 +75,46 @@ public class LoginPage extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, 40));
-
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Login");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, 50));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, 40));
 
         Usernameget.setBackground(new java.awt.Color(255, 255, 255));
         Usernameget.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        Usernameget.setForeground(new java.awt.Color(0, 0, 0));
+        Usernameget.setForeground(new java.awt.Color(153, 153, 153));
+        Usernameget.setText("Username");
         Usernameget.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel1.add(Usernameget, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 90, -1));
+        Usernameget.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Usernameget.setFocusable(false);
+        Usernameget.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UsernamegetMouseClicked(evt);
+            }
+        });
+        Usernameget.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernamegetActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Usernameget, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 115, 120, 25));
 
         Passwordget.setBackground(new java.awt.Color(255, 255, 255));
         Passwordget.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        Passwordget.setForeground(new java.awt.Color(0, 0, 0));
+        Passwordget.setForeground(new java.awt.Color(153, 153, 153));
+        Passwordget.setToolTipText("password");
         Passwordget.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel1.add(Passwordget, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 100, -1));
+        Passwordget.setFocusable(false);
+        Passwordget.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PasswordgetMouseClicked(evt);
+            }
+        });
+        Passwordget.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordgetKeyPressed(evt);
+            }
+        });
+        jPanel1.add(Passwordget, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 154, 120, 27));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/user_es-01.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, 40));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/user_es-01.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/LOGIN SCREEN.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/LOGIN SCREEN concept-05282.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 320));
@@ -112,15 +125,58 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+        
         String username = Usernameget.getText();
         String password = Passwordget.getText();
         
-        if(username.contains("admin"))
+        try
+        {
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement();
+            
+            ResultSet rs = st.executeQuery("select *from admin where username = '"+username+"' && password = '"+password+"'");
+            
+            if(rs.next())
+            {
+                 MainView b = new MainView();
+                     b.setVisible(true);
+                     b.StudentDirectoryBarSelection.setVisible(false);
+                     b.BookDirectoryBarSelection.setVisible(false);
+                     b.Teachersslect.setVisible(false);
+                     b.IssueBookUnselected.setVisible(false);
+                     b.IssueBooksSelected.setVisible(true);
+                     b.Profileslect.setVisible(false);
+                     b.Dataslect.setVisible(false);
+                     this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null , "Wrong Credentials");
+                Usernameget.setText(null);
+                Passwordget.setText(null);
+            }
+            
+        }
+        catch(Exception e)
+        {
+            
+        }
+        
+        /*if(username.contains("admin"))
         {
             if(password.contains("1234"))
             {
-               new MainView().setVisible(true);
-               setVisible(false);
+               
+               MainView b = new MainView();
+                     b.setVisible(true);
+                     b.StudentDirectoryBarSelection.setVisible(false);
+                     b.BookDirectoryBarSelection.setVisible(false);
+                     b.Notificationsslect.setVisible(false);
+                     b.IssueBookUnselected.setVisible(false);
+                     b.IssueBooksSelected.setVisible(true);
+                     b.Profileslect.setVisible(false);
+                     b.Dataslect.setVisible(false);
+                     this.setVisible(false);
             }
             else
             {
@@ -151,7 +207,7 @@ public class LoginPage extends javax.swing.JFrame {
             Usernameget.setText(null);
             Passwordget.setText(null);
             
-        }
+        }*/
             
             
         
@@ -163,6 +219,75 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void UsernamegetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernamegetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernamegetActionPerformed
+
+    private void UsernamegetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsernamegetMouseClicked
+        // TODO add your handling code here:
+        Usernameget.setFocusable(true);
+        Usernameget.setText(null);
+        Usernameget.setForeground(Color.BLACK);
+        
+        
+    }//GEN-LAST:event_UsernamegetMouseClicked
+
+    private void PasswordgetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordgetMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_PasswordgetMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        
+        jLabel2.setVisible(false);
+        Passwordget.setFocusable(true);
+        Passwordget.setText(null);
+        Passwordget.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void PasswordgetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordgetKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        {
+            String username = Usernameget.getText();
+        String password = Passwordget.getText();
+        
+        try
+        {
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement();
+            
+            ResultSet rs = st.executeQuery("select *from admin where username = '"+username+"' && password = '"+password+"'");
+            
+            if(rs.next())
+            {
+                 MainView b = new MainView();
+                     b.setVisible(true);
+                     b.StudentDirectoryBarSelection.setVisible(false);
+                     b.BookDirectoryBarSelection.setVisible(false);
+                     b.Teachersslect.setVisible(false);
+                     b.IssueBookUnselected.setVisible(false);
+                     b.IssueBooksSelected.setVisible(true);
+                     b.Profileslect.setVisible(false);
+                     b.Dataslect.setVisible(false);
+                     this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null , "Wrong Credentials");
+                Usernameget.setText(null);
+                Passwordget.setText(null);
+            }
+            
+        }
+        catch(Exception e)
+        {
+            
+        }
+        }
+    }//GEN-LAST:event_PasswordgetKeyPressed
 
     /**
      * @param args the command line arguments
@@ -204,12 +329,8 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JTextField Usernameget;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

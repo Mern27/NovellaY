@@ -5,6 +5,13 @@
  */
 package Novella.YMain;
 
+import Novella.Database.DatabaseManager.ActivationProvider;
+import Novella.Database.DatabaseManager.ConnectionProvider;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -34,19 +41,51 @@ public class SplashScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("00%");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/SPLASH SCREAN PNG.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Novella/YMain/Images/SPLASH SCREAN-01.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setSize(new java.awt.Dimension(582, 390));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        /*MainView b = new MainView();
+        try
+        {
+            //Connection with novella database
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select *from activationcodes");
+            //Connection with Activations
+            Connection activ = ActivationProvider.getCon();
+            Statement act = activ.createStatement();
+            ResultSet ac = act.executeQuery("select *from activationcodes where code = '"+rs+"'");
+            
+            if (ac.next())
+            {
+                String p = ac.getString(1);
+                b.ActivationNo.setText(p);
+                JOptionPane.showMessageDialog(null, "Successfull");
+            }
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }*/
+    }//GEN-LAST:event_formComponentShown
 
     /**
      * @param args the command line arguments
